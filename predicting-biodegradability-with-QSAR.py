@@ -71,7 +71,6 @@ df_biodegradable_vars.describe()
 # In[104]:
 
 
-get_ipython().run_line_magic('matplotlib', 'inline')
 df_biodegradable_vars.hist(bins=50, figsize=(20,15))
 plt.show()
 
@@ -149,7 +148,7 @@ ax.set_title('Random forest\nfeature importance', fontsize = title_fs)
 
 plt.figure(figsize=(50, 40), dpi=300)
 plt.tight_layout()
-#plt.savefig("feature_importance.png",dpi=120) 
+plt.savefig("feature_importance.png",dpi=120) 
 plt.show()
 
 
@@ -300,8 +299,6 @@ final_stats = final_stats.T
 
 # In[125]:
 
-
-#Transpose the dataframe conf
 final_stats
 
 
