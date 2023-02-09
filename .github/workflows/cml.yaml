@@ -16,7 +16,7 @@ jobs:
           
           echo "## Data-Vis" > report.md
           
-          cml comment feature_importance.png --md >> report.md
+          cml-publish feature_importance.png --md >> report.md
           echo "importances" >> report.md
           
           echo "final_MCC" >> report.md
