@@ -127,6 +127,9 @@ print(pd.DataFrame(features_transformed).isna().any(axis=1).sum())
 
 
 import seaborn as sns
+from sklearn.ensemble import RandomForestClassifier
+
+
 rfx=RandomForestClassifier()
 rfx.fit(features_transformed, y)
 
