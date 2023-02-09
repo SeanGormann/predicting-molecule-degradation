@@ -1,0 +1,24 @@
+name: predicting-molecule-degradation
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+     
+      - uses: iterative/setup-cml@v1
+      - name: Train model
+        env:
+          REPO_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN}}
+        run: |
+          pip install -r requirements.txt
+          python predicting-biodegradability-with-QSAR.py
+          
+          echo "## Data-Vis" > report.md
+          
+          cml-publish feature_importance.png --md >> report.md
+          echo "importances" >> report.md
+          
+          echo "final_MCC" >> report.md
+          echo "final_stats >> report.md
+          cml-send-comment report.md
